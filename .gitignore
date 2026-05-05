@@ -1,0 +1,5 @@
+# VS Code runtime lock files
+ide/
+
+# Skills kept local-only (not published to the repo)
+skills/motivator/
