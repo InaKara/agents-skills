@@ -1,6 +1,6 @@
 ---
 name: sync-agents-skills
-description: Sync personal Copilot agents, skills, instructions, and prompts with the remote GitHub repo at https://github.com/InaKara/agents-skills.git. Use when you want to pull updates from another machine, or commit and push newly added/modified agents, skills, instructions, or prompts. IMPORTANT: this skill always operates on the ~/.copilot/ directory, regardless of which workspace is currently open.
+description: "Sync personal Copilot agents, skills, instructions, and prompts with the remote GitHub repo at https://github.com/InaKara/agents-skills.git. Use when you want to pull updates from another machine, or commit and push newly added/modified agents, skills, instructions, or prompts. IMPORTANT: this skill always operates on the ~/.copilot/ directory, regardless of which workspace is currently open."
 argument-hint: "[pull | push [commit message]]"
 user-invocable: true
 ---
