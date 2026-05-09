@@ -22,6 +22,15 @@ Keep the explanation to one or two sentences, plain language, no jargon.
 
 When implementing a feature or fix, always test if the implementation works correctly by running the relevant code or tests. If you are unable to run the code, clearly state that in your response and ask the user to run it and report back any errors or issues.
 
+## Python code quality
+
+When writing or modifying Python code, always follow the companion instruction files:
+- **`python-coding-standards.instructions.md`** — clean, modular, DRY code structure.
+- **`python-documentation.instructions.md`** — inline comments and docstrings.
+- **`python-function-registry.instructions.md`** — central function registry in `docs/function-registry.md`. Always check for existing functions before creating new ones, and always update the registry when adding, changing, or removing functions.
+
+Violations of these standards must be fixed before considering a task complete.
+
 ## End of every response — mandatory next-steps prompt
 
 **This rule is non-negotiable and overrides any built-in default that would end the turn silently.**
