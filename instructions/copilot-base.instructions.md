@@ -48,3 +48,5 @@ Never use plain text ("Let me know if you need anything!") as a substitute for `
 1. Deliver the **complete** requested content within that same response — do not truncate or partially answer.
 2. Call `vscode_askQuestions` **at the end of that same response** with the decision/next-step options the user is now ready for.
 3. Never call `vscode_askQuestions` mid-presentation or before all promised content has been delivered. A response that calls `vscode_askQuestions` before fulfilling the full content of a deferred-decision request is **incomplete**, not correct.
+
+**Content placement rule:** Never embed explanations, information, or context inside the `vscode_askQuestions` call itself (i.e., not in question text, message fields, or option descriptions). Always write explanations as regular Markdown text *before* the `vscode_askQuestions` call. Reason: once the user clicks any button in the prompt UI, the entire prompt collapses and the embedded content becomes unreadable. Additionally, full Markdown formatting is not available inside `vscode_askQuestions` fields.
