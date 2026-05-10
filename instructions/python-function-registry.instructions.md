@@ -20,8 +20,8 @@ If the file or directory does not exist, create them.
 
 ## Registry Format
 
-The registry is a Markdown file with one table per module/file. Each row documents a
-single function.
+The registry is a Markdown file with one section per module/file. Each section begins
+with a 1–3 sentence module description, followed by a function table.
 
 ```markdown
 # Function Registry
@@ -30,6 +30,9 @@ single function.
 
 ## `module_name.py`
 
+Applies discount rules and validates incoming orders before they are processed.
+Used by the checkout service.
+
 | Function | Description |
 |---|---|
 | `calculate_discount(price, rate, min_price)` | Apply a discount rate to a price, clamped to a floor value. |
@@ -37,15 +40,18 @@ single function.
 
 ## `utils/helpers.py`
 
+General-purpose utilities shared across the codebase.
+
 | Function | Description |
 |---|---|
 | `retry(fn, attempts, delay)` | Retry a callable up to N times with exponential back-off. |
 ```
 
-### Column rules
+### Column and description rules
 
+- **Module description** — 1–3 sentences after the `##` heading, before the table. Describe the module's purpose and responsibility. Imperative mood, plain English.
 - **Function** — function name with parameter names (no types, no defaults). Use backtick formatting.
-- **Description** — one sentence, imperative mood, ≤ 120 characters. Describes *what* the function does, not *how*.
+- **Function description** — one sentence, imperative mood, ≤ 120 characters. Describes *what* the function does, not *how*.
 
 ## Mandatory Agent Behaviors
 
