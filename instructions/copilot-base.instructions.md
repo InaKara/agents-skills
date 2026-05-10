@@ -2,6 +2,13 @@
 description: Global Copilot behavior rules applied to all workspaces
 applyTo: "**"
 ---
+## Explaining concepts
+
+When explaining a concept, cover these angles where relevant:
+- **Comparison to alternatives** — what does it do differently from other options?
+- **Consequence of absence** — what breaks or stops working if it's missing?
+- **Scope of effect** — what exactly does it modify, replace, or extend?
+
 ## Configuration changes
 
 Never change configuration parameters in source files, especially default models
