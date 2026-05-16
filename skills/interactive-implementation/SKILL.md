@@ -10,6 +10,7 @@ tools:
   - grep_search
   - file_search
   - get_errors
+  - runSubagent
 ---
 
 # Interactive Implementation Skill
@@ -108,6 +109,23 @@ Use `vscode_askQuestions` to ask the user their familiarity with **each** requir
 - "Expert"
 
 Always include a free-form field: "Anything specific you'd like to know about these topics?"
+
+### 2c.5. Offer concept primers for unfamiliar concepts
+
+After all familiarity responses in 2c are collected, identify concepts the user rated **"Never heard of it"** or **"Heard of it but haven't used it"**.
+
+If any exist, ask via `vscode_askQuestions`:
+- Question: "Would you like a concept primer file generated for any of these? Files are saved to `docs/concepts/` for future reference and reuse."
+- List each unfamiliar concept as a selectable option (multi-select enabled)
+- Include a "None — skip primers" option and a free-form field
+
+For each concept the user selects, invoke the `concept-primer` skill via `runSubagent`. If multiple concepts are selected, invoke all subagents **in parallel** — do not wait for one to finish before starting the next.
+
+After all subagents return, report: `"Concept primer(s) ready: [list of file paths]."` Then continue to 2d.
+
+For concepts that now have a primer file, shorten the inline 2d explanation: reference the file for depth and focus your inline remarks only on how the concept appears in this specific implementation step.
+
+---
 
 ### 2d. Explain each concept to the right depth
 
